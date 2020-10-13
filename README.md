@@ -76,3 +76,17 @@ google说内部从来没有使用这个方法，证明都是用grpc来处理消�
 
 ## protobuf生成的接口说明
 c++生成的消息类型有哪些接口？？
+
+## protobuf的一些工具
+protobuf打印对象信息DebugString
+
+protobuf 二进制转为json，这里转换的是raw data也就是说数据都是编号，而没有具体的名称。
+```
+protoc --decode_raw < message.bin > message.txt
+```
+
+如果需要具体的名称，可以参考。
+```
+protoc --decode message message.proto < message.bin > message.txt
+```
+
